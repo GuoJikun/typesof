@@ -1,0 +1,46 @@
+{
+  "name": "typesof",
+  "version": "1.1.0",
+  "description": "javascript类型判断",
+  "keywords": [
+    "type",
+    "types",
+    "typesof",
+    "typesOf",
+    "类型",
+    "lib",
+    "types",
+    "isUndefined",
+    "isNull",
+    "isNumber",
+    "isString",
+    "isBoolean",
+    "isFunction",
+    "isArray",
+    "isObject",
+    "isSymbol",
+    "isSet",
+    "isMap",
+    "isWeakSet",
+    "isWeakMap",
+    "isBigint"
+  ],
+  "main": "lib/typeof.js",
+  "types": "types/typeof.d.ts",
+  "files": [
+    "lib",
+    "types",
+    "readme.md",
+    "tsconfig.json",
+    "package.json"
+  ],
+  "author": "GuoJikun",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "npx tsc --build tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}

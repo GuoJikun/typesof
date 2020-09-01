@@ -1,0 +1,12 @@
+{
+  "files": ["src/typeof.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "UMD",
+    "target": "es5",
+    "outDir": "./lib",
+    "declaration": true,
+    "declarationDir": "./types"
+  }
+}
