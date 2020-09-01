@@ -4,16 +4,17 @@
  * @param {Boolean} capitalise - 类型的首字母是否大写
  * @returns {String}
  */
-function typeOf(val: any, capitalise?: boolean): string {
+export function typeOf(val: any, capitalise?: boolean): string {
   const type = Object.prototype.toString.call(val);
-  return type.replace(/(^\[object )([a-zA-Z]+)(\]$)/, "$2");
+  const target = type.replace(/(^\[object )([a-zA-Z]+)(\]$)/, "$2");
+  return capitalise ? target : target.toLowerCase();
 }
 /**
  * 是否是Array类型
  * @param {any} val
  * @returns {Boolean}
  */
-function isArray(val: any): boolean {
+export function isArray(val: any): boolean {
   return typeOf(val) === "array";
 }
 /**
@@ -21,7 +22,7 @@ function isArray(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isObject(val: any): boolean {
+export function isObject(val: any): boolean {
   return typeOf(val) === "object";
 }
 /**
@@ -29,7 +30,7 @@ function isObject(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isNumber(val: any): boolean {
+export function isNumber(val: any): boolean {
   return typeOf(val) === "number";
 }
 
@@ -38,7 +39,7 @@ function isNumber(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isFunction(val: any): boolean {
+export function isFunction(val: any): boolean {
   return typeOf(val) === "function";
 }
 
@@ -47,7 +48,7 @@ function isFunction(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isSymbol(val: any): boolean {
+export function isSymbol(val: any): boolean {
   return typeOf(val) === "symbol";
 }
 
@@ -56,7 +57,7 @@ function isSymbol(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isBoolean(val: any): boolean {
+export function isBoolean(val: any): boolean {
   return typeOf(val) === "boolean";
 }
 /**
@@ -64,7 +65,7 @@ function isBoolean(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isUndefined(val: any): boolean {
+export function isUndefined(val: any): boolean {
   return typeOf(val) === "undefined";
 }
 /**
@@ -72,7 +73,7 @@ function isUndefined(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isNull(val: any): boolean {
+export function isNull(val: any): boolean {
   return typeOf(val) === "null";
 }
 /**
@@ -80,7 +81,7 @@ function isNull(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isString(val: any): boolean {
+export function isString(val: any): boolean {
   return typeOf(val) === "string";
 }
 
@@ -89,7 +90,7 @@ function isString(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isSet(val: any): boolean {
+export function isSet(val: any): boolean {
   return typeOf(val) === "set";
 }
 
@@ -98,7 +99,7 @@ function isSet(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isWeakSet(val: any): boolean {
+export function isWeakSet(val: any): boolean {
   return typeOf(val) === "weakset";
 }
 
@@ -107,7 +108,7 @@ function isWeakSet(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isMap(val: any): boolean {
+export function isMap(val: any): boolean {
   return typeOf(val) === "map";
 }
 
@@ -116,7 +117,7 @@ function isMap(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isWeakMap(val: any): boolean {
+export function isWeakMap(val: any): boolean {
   return typeOf(val) === "weakmap";
 }
 
@@ -125,7 +126,7 @@ function isWeakMap(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isBigint(val: any): boolean {
+export function isBigint(val: any): boolean {
   return typeOf(val) === "bigint";
 }
 
@@ -134,11 +135,11 @@ function isBigint(val: any): boolean {
  * @param {any} val
  * @returns {Boolean}
  */
-function isDate(val: any): boolean {
+export function isDate(val: any): boolean {
   return typeOf(val) === "Date";
 }
 
-export const types: object = {
+export default {
   typeOf,
   isUndefined,
   isNull,
@@ -156,5 +157,3 @@ export const types: object = {
   isBigint,
   isDate,
 };
-
-export default types;
