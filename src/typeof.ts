@@ -129,6 +129,15 @@ function isBigint(val: any): boolean {
   return typeOf(val) === "bigint";
 }
 
+/**
+ * 是否是Date类型
+ * @param {any} val
+ * @returns {Boolean}
+ */
+function isDate(val: any): boolean {
+  return typeOf(val) === "Date";
+}
+
 export const types: object = {
   typeOf,
   isUndefined,
@@ -145,6 +154,7 @@ export const types: object = {
   isWeakSet,
   isWeakMap,
   isBigint,
+  isDate,
 };
 
 export default types;
